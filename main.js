@@ -1,6 +1,11 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 // include the Node.js 'path' module at the top of your file
-const path = require("node:path");
+const path = require("path");
+const { menuItems } = require("./src/menu");
+
+//menu
+const menu = Menu.buildFromTemplate(menuItems);
+Menu.setApplicationMenu(menu);
 
 // modify your existing createWindow() function
 const createWindow = () => {
@@ -14,7 +19,6 @@ const createWindow = () => {
 
   win.loadFile("index.html");
 };
-// ...
 
 app.whenReady().then(() => {
   createWindow();
