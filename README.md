@@ -3,5 +3,5 @@
 `1. npm install`
 `2. npm start`
 
-# For making a application file run:
+# For making an application file, run:
 `npm run make`
